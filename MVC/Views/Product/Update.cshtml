@@ -1,0 +1,20 @@
+﻿@using ClassLibrary
+@model Product
+<html>
+<head>
+
+</head>
+<body class="container bg-light">
+    <form asp-controller="Product" asp-action="Update" method="post">
+        <div class="form-group">
+            <label class="text-warning">New name:</label>
+            <input type="text" asp-for="@Model.Name" class="form-control">
+        </div>
+        <div class="form-group">
+            <label class="text-warning">Product explanation:</label>
+            <input type="text" asp-for="@Model.Explanation" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-success">Update</button>
+    </form>
+</body>
+</html>

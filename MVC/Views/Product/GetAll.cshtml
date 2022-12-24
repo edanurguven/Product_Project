@@ -1,0 +1,38 @@
+﻿@model List<ClassLibrary.Product>;
+<html>
+<head>
+    <title>
+        Index
+    </title>
+</head>
+<body >
+    <div class="bg-opacity-10">
+        <table class="table ">
+            <thead>
+                <tr>
+                    <th class="text-danger" scope="col">Name</th>
+                    <th class="text-danger" scope="col">Explanation</th>
+                    <th class="text-danger" scope="col">Properties</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="text-warning">@item.Name</td>
+                        <td class="text-warning"> @item.Explanation</td>
+                        <td class="btn-group btn-group-lg" role="group" >
+                            <a href="/Product/Update/@item.ID" class="btn btn-warning  text-danger" tabindex="-1" role="button" >Update</a> /
+                            <a href="/Product/Delete/@item.ID" class="btn btn-warning text-danger" tabindex="-1" role="button">Delete</a>/
+                            <a href="/Product/Profil/@item.ID" class="btn btn-warning text-danger" tabindex="-1" role="button">Profile</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <hr />
+        <p>Add new product: </p>
+        <button class="btn-success"><a href="/Product/Add">Add</a></button>
+    </div>
+</body>
+</html>

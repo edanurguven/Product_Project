@@ -1,0 +1,40 @@
+﻿@model List<ClassLibrary.Product>;
+
+<body >
+      <div class="container-sm container-md container-lg container-xl  pb-1" style="padding: 3rem;">
+        <section>
+            <!--arama kısmı için-->
+            <div class="mb-3  row">
+                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 container-fluid   ">  <!-- container-fluid  -->
+                    <div class=" collapse d-inline-flex  justify-content-between  ">  <!-- d-sm-inline-flex  -->
+                        <form action="/Product/SearchResult" method="get" class="form-inline my-2 my-lg-0 ">
+                            <input class="form-control mr-sm-2" name="productname" id="productname" type="search"  aria-label="search">
+                            <button class="btn btn-warning my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--Search part is finished-->
+        </section>
+        <!--card -->
+        <section style=" padding: 1rem;">  
+            <div class="row justify-content-around ">
+                
+                    @foreach(var item in Model)
+                    {
+                        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3" style=" padding: 1rem;">
+                            <div class="card border-danger">
+                                <img src="@item.img_url" class="card-img-top img-boy" alt="...">
+                                <div class="card-body bg-warning">
+                                    <h5 class="card-text">@item.Name</h5>
+
+                                <button type="button" class="btn btn-outline-danger"><a class="stretched-link text-dark " asp-controller="Product" asp-action="Profil" asp-route-id="@item.ID" class="card-link">Show profile</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+            </div>
+        </section>  
+        <!--finished-->
+      </div>
+</body>

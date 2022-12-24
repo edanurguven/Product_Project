@@ -1,0 +1,24 @@
+﻿@using ClassLibrary
+@model Product
+<html>
+<head>
+
+</head>
+<body class="container bg-light">
+    <form asp-controller="Product" asp-action="Add" method="post">
+        <div class="form-group">
+            <label class="text-warning">Name</label>
+            <input type="text" asp-for="@Model.Name" class="form-control">
+        </div>
+        <div class="form-group">
+            <label class="text-warning">Explanation</label>
+            <input type="text" asp-for="@Model.Explanation" class="form-control">
+        </div>
+        <div class="form-group">
+            <label class="text-warning">İmg Url</label>
+            <input type="text" asp-for="@Model.img_url" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-success">Add</button>
+    </form>
+</body>
+</html>
